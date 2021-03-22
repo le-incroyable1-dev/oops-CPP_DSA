@@ -22,8 +22,31 @@ Fraction operator+(Fraction const &f2)
 //Fraction f3 = f1 + f2 ; 
 
 /*
-If we need to use a unary operator like ++ , we need to ensure that changes are reflected in the original Fraction
+If we need to use a unary operator like ++ for pre-increment , we need to ensure that changes are reflected in the original Fraction
 object as well. For that, we need to return by reference and NOT by value.
 
+In case of pre-increment, we may require nesting i.e. ++(++f2) ;
 In order to return by reference, we ONLY need to add "&" after the return type of the function.
 */
+
+// WORKS FOR PRE-INCREMENT
+Fraction& operator++()
+{
+  numerator = numerator + denominator ;
+  simplify();
+  
+  return (*this) ;
+}
+
+// WORKS FOR POST-INCREMENT
+// In case of post increment, generally we do not require nesting the operator and thus return by value works.
+Fraction operator++(int)
+{
+  Fraction fnew(numerator, denominator);
+  
+  numerator = numerator + denominator ;
+  simplify();
+  fnew.simplify();
+  
+  return fnew;
+}
