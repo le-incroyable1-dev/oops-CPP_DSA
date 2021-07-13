@@ -1,3 +1,5 @@
+----------------------------------------
+PROTECTED KEYWORD
 The protected keyword specifies access to class members in the member-list up to the next access specifier (public or private) or the end of the class definition. 
 Class members declared as protected can be used only by the following:
 
@@ -9,8 +11,6 @@ Direct privately derived classes that also have private access to protected memb
 Protected actually carries properties of private in the class, but the difference comes during inheritance. Plain private members are hidden in a derived class but
 protected members can still be accessed depending on how the class is derived (public/private/protected).
 
-
-
 When preceding the name of a base class, the protected keyword specifies that the public and protected members of the base class are protected members of its derived classes.
 
 Protected members are not as private as private members, which are accessible only to members of the class in which they are declared, but they are not 
@@ -20,3 +20,13 @@ Protected members that are also declared as static are accessible to any friend 
 as static are accessible to friends and member functions in a derived class only through a pointer to, reference to, or object of the derived class.
 
 For related information, see friend, public, private, and the member-access table in Controlling Access to Class Members.
+---------------------------------------
+VIRTUAL ATTRIBUTE
+The Virtual Attribute Is Inherited
+When a virtual function is inherited, its virtual nature is also inherited. This means that
+when a derived class that has inherited a virtual function is itself used as a base class
+for another derived class, the virtual function can still be overridden
+---------------------------------------
+
+
+
