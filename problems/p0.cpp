@@ -39,7 +39,8 @@ std::terminate() called after throwing an instance of 'int'
 
 std::terminate() is called by the C++ runtime when the program cannot continue for any of the following reasons:
 
-1) an exception is thrown and not caught (it is implementation-defined whether any stack unwinding is done in this case)
+1) an exception is thrown and not caught (it is implementation-defined whether any stack unwinding is done in this case). It is a good practice to catch the
+throw inside the function itself to avoid complications.
 2) a function directly invoked by the exception handling mechanism while handling an exception that has not yet been caught exits via an exception (e.g. a destructor of some local object, or a copy constructor constructing a catch-clause parameter)
 3) the constructor or the destructor of a static or thread-local (since C++11) object throws an exception
 4) a function registered with std::atexit or std::at_quick_exit (since C++11) throws an exception
